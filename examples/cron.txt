@@ -1,0 +1,19 @@
+# ai-research-radar — local cron examples
+#
+# Edit paths, then install with:  crontab -e
+# Verify with:                    crontab -l
+#
+# Cron uses UTC on most systems; `CRON_TZ` is supported by cronie/vixie.
+# Logs land in radar.log inside the repo.
+
+CRON_TZ=Asia/Shanghai
+RADAR_HOME=/path/to/ai-research-radar
+
+# Daily report at 08:30 local time
+30 8 * * * cd $RADAR_HOME && ./.venv/bin/radar run >> radar.log 2>&1
+
+# Twice-daily variant (morning + evening)
+# 30 8,20 * * * cd $RADAR_HOME && ./.venv/bin/radar run >> radar.log 2>&1
+
+# Hourly light fetch (report still generated once a day by the job above)
+# 0 * * * * cd $RADAR_HOME && ./.venv/bin/radar fetch >> radar.log 2>&1

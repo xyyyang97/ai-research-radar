@@ -1,0 +1,66 @@
+# =============================================================================
+# ai-research-radar — source & interest configuration
+#
+# This is the single place you edit to change what the radar watches.
+# You never need to touch application code to add or remove a source.
+# =============================================================================
+
+# --- Where local state lives -------------------------------------------------
+database_path: data/radar.db
+report_dir: reports
+
+# --- Topics (your interests) --------------------------------------------------
+# Two forms are accepted:
+#   1. a plain string: the topic name doubles as its keyword set seed
+#      ("openai" matches "openai", "OpenAI", "openai.com" ...)
+#   2. a mapping with an explicit keyword list (recommended for fuzzy topics)
+topics:
+  - ai-agents
+  - agent-runtime
+  - coding-agents
+  - document-editors
+  - openai
+  - anthropic
+  - google-ai
+  - name: llm-infra
+    label: LLM Infrastructure & Serving
+    keywords: [inference, vllm, tensorrt, quantization, gguf, serving, gpu cluster]
+
+# --- GitHub repositories -------------------------------------------------------
+# globs supported: "owner/repo" or "owner/*"
+# The radar ingests each repo's latest releases plus recent push/tag activity.
+github:
+  - openai/*
+  - anthropics/*
+  - google-gemini/*
+  - ueberdosis/tiptap
+  - evaera/roblox-lua-promise   # example of a single pinned repo
+
+# --- RSS / Atom feeds ----------------------------------------------------------
+# Plain URLs are fine; give a name when the feed title is unclear.
+feeds:
+  - https://openai.com/news/rss.xml
+  - name: Google Research Blog
+    url: https://research.google/blog/rss/
+  - name: Hugging Face Blog
+    url: https://huggingface.co/blog/feed.xml
+  - name: Simon Willison (independent analyst)
+    url: https://simonwillison.net/atom/everything/
+
+# --- Plain web pages / blogs without RSS ----------------------------------------
+# Anthropic publishes no official RSS; the page adapter extracts article links
+# from their /news index instead. Prefer a feed whenever one exists.
+pages:
+  - name: Anthropic News
+    url: https://www.anthropic.com/news
+
+# --- Pipeline tuning ------------------------------------------------------------
+options:
+  lookback_days: 7            # report window
+  fetch_timeout_seconds: 20
+  max_items_per_feed: 40
+  github_max_releases_per_repo: 5
+  github_include_activity: true   # pushes/tags as low-weight signals
+  # simhash Hamming distance for fuzzy near-duplicate merging.
+  # Empirically: lightly-edited syndicated copies land <=16, unrelated items 25+.
+  dedup_similarity_threshold: 16

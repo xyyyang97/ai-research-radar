@@ -1,0 +1,27 @@
+# Secrets — never commit real keys
+.env
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local runtime state (SQLite database holds your fetched history)
+data/*.db
+data/*.db-journal
+data/*.sqlite*
+
+# Reports are generated artifacts; uncomment to stop tracking them
+# reports/
