@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Channel C uploads</title>
+  <id>yt:channel:UCxxx</id>
+  <updated>2026-08-25T12:00:00+00:00</updated>
+  <entry>
+    <title>Deep dive: building agent runtimes</title>
+    <id>yt:video:dQw4w9WgXcQ</id>
+    <published>2026-08-25T10:00:00+00:00</published>
+    <updated>2026-08-25T10:00:00+00:00</updated>
+    <author><name>C Channel</name></author>
+    <link rel="alternate" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
+    <summary>Talk about agent runtime architecture and tool use.</summary>
+  </entry>
+</feed>

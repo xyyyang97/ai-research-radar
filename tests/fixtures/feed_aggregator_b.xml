@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Syndicated copy of the same Vendor A announcement, different outlet & slug -->
+<rss version="2.0">
+<channel>
+  <title>Aggregator B</title>
+  <link>https://aggregator-b.example.com</link>
+  <item>
+    <title>Acme launches Model X with new pricing</title>
+    <link>https://aggregator-b.example.com/2026/08/vendor-a-model-x</link>
+    <pubDate>Tue, 25 Aug 2026 11:30:00 +0000</pubDate>
+    <description>Syndicated headline: Acme launches Model X with new pricing.</description>
+  </item>
+  <item>
+    <title>Unrelated: database outage post-mortem</title>
+    <link>https://aggregator-b.example.com/2026/08/outage-postmortem</link>
+    <pubDate>Sun, 23 Aug 2026 08:00:00 +0000</pubDate>
+    <description>What happened, what we fixed, and follow-up work.</description>
+  </item>
+</channel>
+</rss>

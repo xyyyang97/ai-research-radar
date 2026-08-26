@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Vendor A News</title>
+  <link>https://vendor-a.example.com</link>
+  <description>Example vendor feed for tests</description>
+  <item>
+    <title>Acme launches Model X with new pricing</title>
+    <link>https://vendor-a.example.com/blog/model-x-launch?utm_source=rss&amp;utm_campaign=launch</link>
+    <pubDate>Tue, 25 Aug 2026 10:00:00 +0000</pubDate>
+    <dc:creator>Jane Doe</dc:creator>
+    <description><![CDATA[<p>Today we are launching <b>Model X</b>, our new flagship model. The API now costs $0.50 per 1M input tokens. Benchmarks show it beats the previous state of the art.</p>]]></description>
+  </item>
+  <item>
+    <title>Routine changelog update for week 34</title>
+    <link>https://vendor-a.example.com/blog/changelog-34</link>
+    <pubDate>Mon, 24 Aug 2026 09:00:00 +0000</pubDate>
+    <description><![CDATA[Minor dependency bumps and docs fixes across the board this week.]]></description>
+  </item>
+</channel>
+</rss>
