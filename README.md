@@ -178,6 +178,16 @@ over scraping; the built-in page adapter is deliberately conservative.
 | `OPENAI_COMPATIBLE_BASE_URL` / `_API_KEY` | Ollama/vLLM/LM Studio/OpenRouter/Groq… | no |
 | `RADAR_ALLOW_PRIVATE` | allow loopback/private URLs (local testing ONLY) | no |
 
+Example — **DeepSeek** works through the OpenAI-compatible slot:
+
+```bash
+# ~/ai-research-radar/.env
+RADAR_LLM_PROVIDER=openai-compatible
+OPENAI_COMPATIBLE_BASE_URL=https://api.deepseek.com/v1
+OPENAI_COMPATIBLE_API_KEY=sk-你的key
+RADAR_LLM_MODEL=deepseek-chat
+```
+
 ### Adding an LLM provider
 
 Subclass `BaseHTTPProvider` and register — either in-process or as a package
